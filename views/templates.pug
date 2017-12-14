@@ -1,0 +1,13 @@
+doctype html
+html
+    head 
+        link(rel="stylesheet" type="text/css" href="templates.css")
+    body
+        h1 Here are your templates
+        div(class="wrapper")
+            div(id="iframe-div")
+                iframe(srcdoc=template_1 ? template_1 : "<p>No content for template 1</p>")
+            div(id="iframe-div")
+                iframe(srcdoc=template_2 ? template_2 : "<p>No content for template 2</p>")
+            div(id="iframe-div")
+                iframe(srcdoc=template_3 ? template_3 : "<p>No content for template 3</p>")

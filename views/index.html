@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="index.css" />
+</head>
+<body>
+    <div class="wrapper">
+        <div id="header-left">
+            <h1>Need Email Templates?</h1>
+            <h2>Responsive</h2>
+            <p>Those templates are made with MJML, which makes them responsive by default.</p>
+            <h2>Tailored for your brand</h2>
+            <p>Just fill in your Brand name, your main and secondary color, and off you go.</p>
+            <h2>Easy to update</h2>
+            <p>Need to update a few thingss? Download them as MJML and make the changes!</p> 
+        </div>
+        
+        <div id="header-right">
+            <img src="./img/welcome-desktop.png" id="template-desktop" />
+        </div> 
+    </div>
+    <div class="wrapper" id="form-wrapper">
+        <h1>Let's do it!</h1>
+        <div id="form">
+            <form action="/templates" method="get">
+                <label for="company">Company name: </label><br />
+                <input type="text" name="company" id="company" placeholder="Your company name"><br/>
+                <label for="logo">Your hosted logo </label><br />
+                <input type="url" name="logo" id="logo" placeholder="https://mjml.io/assets/img/mark-logo-3.png"><br/>
+                Company color:<br />
+                <input type="color" name="color" id="color" value="#f45f49"><br/>
+                <button type="submit" value="create">CREATE MY TEMPLATES</button>
+            </form>
+            <p>Created with love and <a href="https://mjml.io" style="color:#f25e49" target="_blank">MJML</a></p>
+        </div>
+    </div>
+</body>
+</html>

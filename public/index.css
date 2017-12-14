@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+  }
+
+  html {
+    display: flex;
+    flex-direction: column;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    min-height: 100vh;
+  }
+
+  h1 {
+    font-size: 3em;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: 2em;
+    font-weight: 700
+  }
+
+  p, form {
+    font-size: 1em;
+    font-weight: 400
+  }
+
+  .wrapper {
+    flex: 1 1 auto;
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto; 
+  }
+
+  #header-left {
+    flex: 1;
+  }
+
+  #header-right {
+    flex: 1;
+    text-align: center;
+  }
+
+  @media (max-width: 800px) {
+    .wrapper {
+      flex-direction: column;
+    }
+    #form-wrapper {
+      width: 80vw!important;
+    }
+    form {
+      width: 90vw!important;
+    }
+    input, button {
+      width: 90%!important;
+    }
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+
+  #header-left,
+  #header-right {
+    margin: .4em;
+  }
+
+  #template-desktop {
+    max-width: 90vw;
+    max-height: 90vh;
+    max-height: 600px;
+    text-align: center!important;
+  }
+
+  #form-wrapper {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    width: 70vw;
+    height: 100vh;
+  }
+
+  #form {
+    margin: 0 auto;
+  }
+
+  form {
+    width: 30vw;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 1.6em;
+  }
+
+  input {
+    margin: 0.3em auto;
+    padding: 0.2em;
+    font-size: 0.8em;
+    width:100%;
+    height: 2em;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  input:invalid {
+    border: 1px solid red;
+  }
+
+  button {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.8em;
+    font-weight: 700;
+    color: #ffffff;
+    padding: 0.3em 0;
+    margin: 0.3em 0;
+    width: 100%;
+    border: none;
+    background-color: #f45f49;
+    outline: none;
+  }
