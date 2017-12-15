@@ -1,0 +1,63 @@
+doctype html
+html
+    head 
+        link(rel="stylesheet" type="text/css" href="index.css")
+        link(href="https://fonts.googleapis.com/css?family=Roboto:400, 500,700" rel="stylesheet")
+    body
+        div.wrapper#header
+            div#nav.inner-container
+                a(href="https://mjml.io" target="_blank")
+                    img(src="./img/logo-white-small.png" width="74" height="24" align="left")
+            div#title.inner-container
+                div#title-left
+                    h1 Need email templates?
+                    p Create responsive template theme for your business in a second
+                    div#title-buttons
+                        a.button.primary(href="#form") Use Generator
+                        a.button.secondary(href="/templates") See templates
+                div#title-right
+                    img(src="./img/mjml.gif" width="250")
+        div.wrapper
+            div#values.inner-container
+                div#responsive 
+                    img(src="./img/responsive.png")
+                    h3 Responsive
+                    p Create responsive template theme for your buisness in a second 
+                div#tailored
+                    img(src="./img/responsive.png")
+                    h3 Tailored for your brand
+                    p Just fill in your Brand name, your main and secondary color, and off you go.
+                div#easy
+                    img(src="./img/responsive.png")
+                    h3 Easy to update
+                    p Need a few things ? Download them as MJML and make the changes
+        .wrapper#form
+            div#form.inner-container
+                div#form-left
+                    form(action="/templates" method="get")
+                        h2 Get your templates!
+                        br
+                        label(for="company") Your company name:
+                        br 
+                        input(type="text" name="company" id="company" placeholder="e.g Mailjet")
+                        br
+                        label(for="logo") Your company logo
+                        br
+                        p#explanation You need to host your logo yourself and past the link inside the field
+                        input(type="url" name="logo" id="logo" placeholder="e.g https://mjml.io/assets/img/mark-logo-3.png")
+                        br
+                        label(for="color") Your company color
+                        br
+                        input(type="color" name="color" id="color" value="#f45f49")
+                        br
+                        button.button.primary(type="submit" value="create") Get templates
+                div#form-right
+                    div#fake-template 
+                        img(src="./img/mjmlbymailjet.png")
+                        p#fake-h1
+                        p#fake-p
+                        p#fake-p
+                        p#fake-p(style="margin-bottom:3em")
+                        a.button.primary(href="./templates") Get templates
+        .wrapper#footer
+            p#footer Created with 🍑 &nbsp; and MJML

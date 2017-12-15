@@ -27,8 +27,9 @@ Not familiar with MJML? Head over to [mjml.io](https://mjml.io).
 ## TODO
 
 [x] Generate templates by asking the company name, color and logo to the user
-[ ] Create a nice website
 [ ] Generate templates automatically from the company website URL
+[x] Create a nice website
+[ ] Landing page for the generated templates
 [ ] Add more templates
-[ ] Integrate templates in iframes
+[x] Integrate templates in iframes
 [ ] Add a button to download all templates at once

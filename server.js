@@ -5,8 +5,13 @@ const port = process.env.PORT || 3030
 
 const renderTemplate = require('./helpers/renderTemplate')
 
-app.use(express.static(path.join(__dirname, 'public')))
-app.use(express.static(path.join(__dirname, 'views')))
+app
+    .use(express.static(path.join(__dirname, 'public')))
+    .set('view engine', 'pug')
+
+app.get('/', (req, res) => {
+    res.render('index')
+})
 
 app.get('/templates', (req, res) => {
     const variables = {
@@ -37,7 +42,7 @@ app.get('/templates', (req, res) => {
         variables.grey,
         variables.darkGrey)
 
-    res.render('templates.pug', {
+    res.render('templates', {
         template_1: welcome,
         template_2: password,
         template_3: welcome
