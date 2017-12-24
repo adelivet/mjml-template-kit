@@ -33,3 +33,4 @@ Not familiar with MJML? Head over to [mjml.io](https://mjml.io).
 [ ] Add more templates
 [x] Integrate templates in iframes
 [ ] Add a button to download all templates at once
+[ ] Add random templates

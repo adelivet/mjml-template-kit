@@ -207,7 +207,7 @@ input:focus {
   padding: 0;
   height: 40px;
 	width: 40px;
-  border-radius: 3px;
+  border-radius: 100px;
   border:none;
 }
 
