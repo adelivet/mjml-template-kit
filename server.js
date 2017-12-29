@@ -2,7 +2,6 @@ const express = require('express')
 const app = express()
 const path = require('path')
 const port = process.env.PORT || 3030
-
 const renderToHtml = require('./helpers/renderToHtml').renderToHtml
 const renderToMjml = require('./helpers/renderToMjml').renderToMjml
 
@@ -23,6 +22,7 @@ app.get('/templates', (req, res) => {
         }
     }
 
+    // TODO: generalize for a list of templates
     const welcomeMjml = renderToMjml("welcome", variables)
     const welcomeHtml = renderToHtml(welcomeMjml)
 
