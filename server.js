@@ -4,6 +4,7 @@ const path = require('path')
 const port = process.env.PORT || 3030
 const renderToHtml = require('./helpers/renderToHtml').renderToHtml
 const renderToMjml = require('./helpers/renderToMjml').renderToMjml
+const renderAll = require('./helpers/renderAll').renderAll
 
 app
     .use(express.static(path.join(__dirname, 'public')))
@@ -22,14 +23,51 @@ app.get('/templates', (req, res) => {
         }
     }
 
-    // TODO: generalize for a list of templates
-    const welcomeMjml = renderToMjml("welcome", variables)
-    const welcomeHtml = renderToHtml(welcomeMjml)
+    const templates = renderAll(variables)
 
     res.render('templates', {
-        template_1: welcomeHtml,
-        template_2: welcomeHtml,
-        template_3: welcomeHtml
+        company: variables.company ? variables.company : '{Company Name}',
+        template_1: templates.welcome,
+        template_2: templates.password,
+        template_3: templates.welcome
+    })
+})
+
+app.get('/random', (req, res) => {
+
+    const spotify = {
+        company: 'Spotify',
+        logo: `/img/brands/spotify.png`,
+        mainColor: '#1DB954',
+    }
+
+    const facebook = {
+        company: 'Facebook',
+        logo: `/img/brands/facebook.png`,
+        mainColor: '#3C5A96',
+    }
+
+    const slack = {
+        company: 'Slack',
+        logo: `/img/brands/slack.png`,
+        mainColor: '#33B17C',
+    }
+
+    const brands = [spotify, facebook, slack]
+    const pickBrand = (min, max) => {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+    const brand = brands[pickBrand(0, brands.length)]
+
+    const templates = renderAll(brand)
+
+    res.render('templates', {
+        company: brand.company ? brand.company : '{Company Name}',
+        template_1: templates.welcome,
+        template_2: templates.password,
+        template_3: templates.welcome
     })
 })
 
