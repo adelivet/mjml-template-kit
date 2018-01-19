@@ -14,7 +14,7 @@ body {
   font-size: 16px;
   min-height: 100vh;
   font-family: Roboto;
-  font-weight: 400;
+  font-weight: 200;
 }
 
 .wrapper {
@@ -34,7 +34,7 @@ body {
 }
 
 #header {
-  min-height: 417px;
+  padding-bottom: 30px;
   background: linear-gradient(0deg, #E5505C 0%, #EE6152 100%);
 }
 
@@ -81,10 +81,10 @@ p {
 }
 
 .button {
-  padding: 8px 16px;
+  padding: 8px 24px;
   min-width: 120px;
-  min-height: 36px;
-  font-size: 14px;
+  min-height: 52px;
+  font-size: 1em;
   line-height: 20px;
   -webkit-transition-duration: 0.4s; 
   transition-duration: 0.4s;
@@ -92,8 +92,12 @@ p {
   text-decoration: none;
 }
 
+a.button {
+  display: inline-block;
+  padding: 16px 24px;
+}
+
 .primary {
-  padding: 9px 16px;
   border: none;
   border-radius: 2px;
   background-color: #4381F4;
@@ -156,7 +160,6 @@ h3 {
 .wrapper#form {
   background-color: #F9F9F9;
   border: 1px solid #E1E1E6;
-
 }
 
 #form {
@@ -272,6 +275,60 @@ p#footer {
  font-size: 14px;
  line-height: 20px;
  text-align: center;
+}
+
+.wrapper#templates {
+  background-color: #F9F9F9;
+  padding: 70px 0 50px 0;
+  border-bottom: 1px solid #E1E1E6;
+}
+
+.inner-container#templates {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  justify-content: space-between;
+}
+
+.thumbnail {
+  height: 303px;
+  width: 310px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 14px 0 rgba(0,0,0,0.04);
+  text-align: center;
+  margin: 0 auto 30px;
+  padding: 15px;
+  background-color: #ffffff;
+}
+
+.thumbnail p {
+  margin-top: 15px;
+  color: #4D4D4D;
+}
+
+.iframe-div {
+  box-sizing: border-box;	
+  height: 233px;		
+  border: 1px solid #E1E1E6;	
+  border-radius: 3px;	
+  background-color: #F9F9F9;
+  overflow: hidden;
+}
+
+iframe {
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  height: 400px; 
+  width: 370px;
+  -ms-zoom: 0.5;
+  -moz-transform: scale(0.75);
+  -moz-transform-origin: 0 0;
+  -o-transform: scale(0.75);
+  -o-transform-origin: 0 0;
+  -webkit-transform: scale(0.75);
+  -webkit-transform-origin: 0 0;
+
 }
 
 @media (max-width: 800px) {

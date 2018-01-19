@@ -1,15 +1,11 @@
-doctype html
-html
-    head 
-        title Free Responsive Email Templates Made With MJML
-        meta(name="viewport" content="width=device-width, initial-scale=1")
-        link(rel="stylesheet" type="text/css" href="index.css")
-        link(href="https://fonts.googleapis.com/css?family=Roboto:400, 500,700" rel="stylesheet")
-    body
+extends layout.pug
+
+block title
+    title Free Responsive Email Templates Made With MJML
+
+block content
         div.wrapper#header
-            div#nav.inner-container
-                a(href="https://mjml.io" target="_blank")
-                    img(src="./img/logo-white-small.png" width="74" height="24" align="left")
+            include includes/nav.pug
             div#title.inner-container
                 div#title-left
                     h1 Need email templates?
@@ -18,7 +14,10 @@ html
                         a.button.primary(href="#form") Use Generator
                         a.button.secondary(href="/templates") See templates
                 div#title-right
-                    img(src="./img/mjml.gif" width="250")
+                    video(autoplay
+                    width="250" 
+                    name="MJML animation" 
+                    src="./img/anim.mov")
         div.wrapper
             div#values.inner-container
                 div#responsive 
@@ -52,7 +51,7 @@ html
                         br
                         input(type="color" name="mainColor" id="color" value="#f45f49")
                         br
-                        button.button.primary(type="submit" value="create") Get templates
+                        button.button.primary(type="submit" value="create") Create templates
                 div#form-right
                     div#fake-template 
                         img(src="./img/mjmlbymailjet.png")
@@ -61,8 +60,3 @@ html
                         p#fake-p
                         p#fake-p(style="margin-bottom:3em")
                         a.button.primary(href="./random") Randomize
-        .wrapper#footer
-            p#footer Created by some 
-                a(href="https://twitter.com/nico_g" style="text-decoration:none" target="_blank") 🤓 
-                | &nbsp;with 
-                a(href="https://mjml.io" style="color:#f45f49" target="_blank") MJML
