@@ -7,6 +7,7 @@ const renderToHtml = require('./helpers/renderToHtml').renderToHtml
 const renderToMjml = require('./helpers/renderToMjml').renderToMjml
 const renderAll = require('./helpers/renderAll').renderAll
 const cleanZips = require('./helpers/cleaner').cleanZips
+const url = 'http://mjml-ready.herokuapp.com'
 
 app
     .use(express.static(path.join(__dirname, 'public')))
@@ -42,19 +43,19 @@ app.get('/random', (req, res) => {
 
     const spotify = {
         company: 'Spotify',
-        logo: path.resolve('public/img/brands/spotify.png'),
+        logo: `${url}/img/brands/spotify.png`,
         mainColor: '#1DB954',
     }
 
     const facebook = {
         company: 'Facebook',
-        logo: path.resolve('public/img/brands/facebook.png'),
+        logo: `${url}/img/brands/facebook.png`,
         mainColor: '#3C5A96',
     }
 
     const slack = {
         company: 'Slack',
-        logo: path.resolve('public/img/brands/slack.png'),
+        logo: `${url}/img/brands/slack.png`,
         mainColor: '#33B17C',
     }
 

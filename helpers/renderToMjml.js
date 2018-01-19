@@ -1,11 +1,11 @@
 const pug = require('pug')
 const fs = require('fs')
-const path = require('path')
+const url = 'http://mjml-ready.herokuapp.com'
 
 const defaultVars = {
     company: '{Company Name}',
-    logo: path.resolve('./public/img/mjml.png'),
-    illustration: path.resolve('./public/img/illustration.png'), 
+    logo: `${url}/img/mjml.png`,
+    illustration: `${url}/img/illustration.png`, 
     mainColor: '#f45e46',
     lightGrey: '#dddddd',
     grey: '#777777',
@@ -16,7 +16,6 @@ const renderToMjml = (templateName, opts) => {
     
     let variables = Object.assign({}, defaultVars, opts)
 
-    console.log(variables.logo)
     if (!fs.existsSync(`./templates/${templateName}.pug`)) {
         throw new Error(`invalid template name: "${templateName}"`)
     }
