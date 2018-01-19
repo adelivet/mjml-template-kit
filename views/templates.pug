@@ -1,7 +1,7 @@
 extends layout.pug
 
 block title
-    title #{company}'s Responsive Email Templates in MJML
+    title #{company} Responsive Email Templates in MJML
 
 block content
     div.wrapper#header
@@ -11,7 +11,7 @@ block content
                 div#title-buttons(style="text-align:center")
                     h1 Here are your templates 🧙
                     a.button.secondary(href="/") &larr; Back to templates creation
-                    a.button.primary(href=zip download=company + "-mjml-templates.zip") Download templates
+                    a.button.primary(href=zip download=company ? company + "-mjml-templates.zip" : "mjml-templates.zip") Download templates
     div.wrapper#templates
         div.inner-container#templates
             div.thumbnail

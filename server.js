@@ -31,7 +31,7 @@ app.get('/templates', (req, res) => {
     const templates = renderAll(variables)
 
     res.render('templates', {
-        company: variables.company ? variables.company : '{Company Name}',
+        company: variables.company,
         zip: templates.zip,
         template_1: templates.welcome,
         template_2: templates.password,
