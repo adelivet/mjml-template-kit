@@ -1,16 +1,20 @@
 const express = require('express')
 const app = express()
+const favicon = require('serve-favicon')
 const path = require('path')
 const port = process.env.PORT || 3030
 const renderToHtml = require('./helpers/renderToHtml').renderToHtml
 const renderToMjml = require('./helpers/renderToMjml').renderToMjml
 const renderAll = require('./helpers/renderAll').renderAll
+const cleanZips = require('./helpers/cleaner').cleanZips
 
 app
     .use(express.static(path.join(__dirname, 'public')))
+    .use(favicon(path.join(__dirname,'public','img','favicon.ico')))
     .set('view engine', 'pug')
 
 app.get('/', (req, res) => {
+    cleanZips()
     res.render('index')
 })
 
@@ -27,6 +31,7 @@ app.get('/templates', (req, res) => {
 
     res.render('templates', {
         company: variables.company ? variables.company : '{Company Name}',
+        zip: templates.zip,
         template_1: templates.welcome,
         template_2: templates.password,
         template_3: templates.welcome
@@ -37,19 +42,19 @@ app.get('/random', (req, res) => {
 
     const spotify = {
         company: 'Spotify',
-        logo: `/img/brands/spotify.png`,
+        logo: `${(path.join(__dirname, 'public'))}/img/brands/spotify.png`,
         mainColor: '#1DB954',
     }
 
     const facebook = {
         company: 'Facebook',
-        logo: `/img/brands/facebook.png`,
+        logo: `${(path.join(__dirname, 'public'))}/img/brands/facebook.png`,
         mainColor: '#3C5A96',
     }
 
     const slack = {
         company: 'Slack',
-        logo: `/img/brands/slack.png`,
+        logo: `${(path.join(__dirname, 'public'))}/img/brands/slack.png`,
         mainColor: '#33B17C',
     }
 
@@ -65,6 +70,7 @@ app.get('/random', (req, res) => {
 
     res.render('templates', {
         company: brand.company ? brand.company : '{Company Name}',
+        zip: templates.zip,
         template_1: templates.welcome,
         template_2: templates.password,
         template_3: templates.welcome

@@ -83,7 +83,6 @@ p {
 .button {
   padding: 8px 24px;
   min-width: 120px;
-  min-height: 52px;
   font-size: 1em;
   line-height: 20px;
   -webkit-transition-duration: 0.4s; 
@@ -103,6 +102,7 @@ a.button {
   background-color: #4381F4;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
   color: #ffffff;
+  min-height: 52px;
 }
 
 .primary:hover {
@@ -115,7 +115,12 @@ a.button {
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
   background: transparent;
   color: #ffffff;
-  margin-left: 25px;
+  margin: 0 25px;
+}
+
+.secondary:hover {
+  background-color: #ffffff;
+  color: #E6565C;
 }
 
 .primary:focus,
@@ -222,6 +227,14 @@ input:focus {
   line-height: 20px;
 }
 
+input:focus {
+  border: 2px solid #4381F4;
+}
+
+#logo:invalid {
+  border: 2px solid #FF624D;
+}
+
 #form-left {
   flex: 2 0 0;
 }
@@ -317,16 +330,16 @@ p#footer {
 
 iframe {
   margin: 0 auto;
-  padding: 0;
   border: 0;
-  height: 400px; 
-  width: 370px;
-  -ms-zoom: 0.5;
-  -moz-transform: scale(0.75);
+  height: 350px; 
+  width: 400px;
+  text-align: center;
+  -ms-zoom: 0.7;
+  -moz-transform: scale(0.7);
   -moz-transform-origin: 0 0;
-  -o-transform: scale(0.75);
+  -o-transform: scale(0.7);
   -o-transform-origin: 0 0;
-  -webkit-transform: scale(0.75);
+  -webkit-transform: scale(0.7);
   -webkit-transform-origin: 0 0;
 
 }

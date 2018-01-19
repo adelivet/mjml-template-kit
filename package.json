@@ -11,8 +11,11 @@
   "devDependencies": {},
   "dependencies": {
     "express": "^4.16.2",
+    "js-beautify": "^1.7.5",
+    "jszip": "^3.1.5",
     "mjml": "^3.3.5",
     "path": "^0.12.7",
-    "pug": "^2.0.0-rc.4"
+    "pug": "^2.0.0-rc.4",
+    "serve-favicon": "^2.4.5"
   }
 }
