@@ -3,8 +3,8 @@ const fs = require('fs')
 
 const defaultVars = {
     company: '{Company Name}',
-    logo: `/img/icon.png`,
-    illustration: '/assets/img/illustration.png', 
+    logo: `${url}/img/mjml.png`,
+    illustration: `${url}/img/illustration.png`, 
     mainColor: '#f45e46',
     lightGrey: '#dddddd',
     grey: '#777777',
