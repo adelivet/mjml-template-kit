@@ -42,19 +42,19 @@ app.get('/random', (req, res) => {
 
     const spotify = {
         company: 'Spotify',
-        logo: `${(path.join(__dirname, 'public'))}/img/brands/spotify.png`,
+        logo: path.resolve('public/img/brands/spotify.png'),
         mainColor: '#1DB954',
     }
 
     const facebook = {
         company: 'Facebook',
-        logo: `${(path.join(__dirname, 'public'))}/img/brands/facebook.png`,
+        logo: path.resolve('public/img/brands/facebook.png'),
         mainColor: '#3C5A96',
     }
 
     const slack = {
         company: 'Slack',
-        logo: `${(path.join(__dirname, 'public'))}/img/brands/slack.png`,
+        logo: path.resolve('public/img/brands/slack.png'),
         mainColor: '#33B17C',
     }
 
