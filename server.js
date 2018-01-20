@@ -27,11 +27,7 @@ app.get('/templates', (req, res) => {
         if (req.query[param]) {
             variables[param] = req.query[param]
             if (param == 'company') {
-                fs.appendFile('./logs.txt', req.query[param] + '\n', err => {
-                    if (err) {
-                        console.log(err)
-                    }
-                })
+                console.log(req.query[param])
             }
         }
     }
