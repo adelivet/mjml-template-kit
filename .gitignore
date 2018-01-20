@@ -59,3 +59,6 @@ typings/
 
 # Dev
 *.DS_Store
+logs.txt
+*.zip
+!mjml-templates.zip

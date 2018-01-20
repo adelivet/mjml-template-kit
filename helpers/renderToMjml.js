@@ -1,11 +1,10 @@
 const pug = require('pug')
 const fs = require('fs')
-const url = 'http://mjml-ready.herokuapp.com'
 
 const defaultVars = {
     company: '{Company Name}',
-    logo: `${url}/img/mjml.png`,
-    illustration: `${url}/img/illustration.png`, 
+    logo: `${process.env.URL}/img/mjml.png`,
+    illustration: `${process.env.URL}/img/illustration.png`, 
     mainColor: '#f45e46',
     lightGrey: '#dddddd',
     grey: '#777777',

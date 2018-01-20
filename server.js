@@ -2,12 +2,13 @@ const express = require('express')
 const app = express()
 const favicon = require('serve-favicon')
 const path = require('path')
+const fs = require('fs')
+const config = require('dotenv').config()
 const port = process.env.PORT || 3030
 const renderToHtml = require('./helpers/renderToHtml').renderToHtml
 const renderToMjml = require('./helpers/renderToMjml').renderToMjml
 const renderAll = require('./helpers/renderAll').renderAll
 const cleanZips = require('./helpers/cleaner').cleanZips
-const url = 'http://mjml-ready.herokuapp.com'
 
 app
     .use(express.static(path.join(__dirname, 'public')))
@@ -25,6 +26,13 @@ app.get('/templates', (req, res) => {
     for (param in req.query) {
         if (req.query[param]) {
             variables[param] = req.query[param]
+            if (param == 'company') {
+                fs.appendFile('./logs.txt', req.query[param] + '\n', err => {
+                    if (err) {
+                        console.log(err)
+                    }
+                })
+            }
         }
     }
 
@@ -43,19 +51,19 @@ app.get('/random', (req, res) => {
 
     const spotify = {
         company: 'Spotify',
-        logo: `${url}/img/brands/spotify.png`,
+        logo: `${process.env.URL}/img/brands/spotify.png`,
         mainColor: '#1DB954',
     }
 
     const facebook = {
         company: 'Facebook',
-        logo: `${url}/img/brands/facebook.png`,
+        logo: `${process.env.URL}/img/brands/facebook.png`,
         mainColor: '#3C5A96',
     }
 
     const slack = {
         company: 'Slack',
-        logo: `${url}/img/brands/slack.png`,
+        logo: `${process.env.URL}/img/brands/slack.png`,
         mainColor: '#33B17C',
     }
 
