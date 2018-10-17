@@ -211,6 +211,10 @@ input:focus {
   outline: none;
 }
 
+input#color:hover {
+  cursor: pointer;
+}
+
 #color {
   padding: 0;
   height: 40px;
